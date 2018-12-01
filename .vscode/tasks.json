@@ -14,10 +14,10 @@
             "args": [
                 "-Wall",
                 "-o",
-                "${fileBasenameNoExtension}",
-                "${fileBasename}",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "${fileDirname}/${fileBasename}",
                 "-g",
-                "-O3",
+                "-O0",
                 "-std=c++14",
                 "-stdlib=libc++",
                 "-lc++",

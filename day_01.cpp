@@ -42,8 +42,12 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    ifstream ifs("day_01.txt",ifstream::in);
-    vector<string> input = read_input(ifs);
+    ifstream ifs("./day_01.txt",ifstream::in);
+    if (!ifs) {
+        cerr << "Unable to open file.\n" << "\n";
+        exit(-1);
+    }
+    auto input = vector<string>(read_input(ifs));
 
     auto starttime = chrono::high_resolution_clock::now();
     auto total = int64_t{0};
