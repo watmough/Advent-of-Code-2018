@@ -15,7 +15,6 @@ int main()
     // read in the input
     ifstream ifs("day_01.txt",ifstream::in);    
     auto lines = vector<string>(read_input(ifs));
-    cout << "Read " << lines.size() << " lines\n";
 
     // Part 1 - parse input lines to numbers and total
     auto freq = int64_t(0);
