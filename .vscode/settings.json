@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "chrono": "cpp",
+        "set": "cpp",
+        "unordered_set": "cpp"
+    }
+}
