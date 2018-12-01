@@ -7,6 +7,23 @@
 // Part 2: First Duplicate: 66932
 // Jonathans-iMac:Advent-of-Code-2018 jonathan$
 
+// Notes on performance: 
+// - using unordered_set
+// - using find(it,it,val) vs. unordered_set.find(val)!=end(values)
+//
+// Jonathans-iMac:Advent-of-Code-2018 jonathan$ ./day_01
+// Part 1: Total: 472
+// Part 1: Elapsed: 0.000666105
+// Part 2: First Duplicate: 66932
+// Part 2: Elapsed: 29.1529
+//
+// Jonathans-iMac:Advent-of-Code-2018 jonathan$ ./day_01
+// Part 1: Total: 472
+// Part 1: Elapsed: 0.000145164
+// Part 2: First Duplicate: 66932
+// Part 2: Elapsed: 0.0179688
+// Jonathans-iMac:Advent-of-Code-2018 jonathan$
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
