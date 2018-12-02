@@ -1,6 +1,6 @@
 // Advent of Code 2018
 //
-// Day 01 - 
+// Day 0x - 
 
 #include <iostream>
 #include <fstream>
