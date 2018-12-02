@@ -29,5 +29,9 @@ std::vector<std::string> read_input(std::istream& ifs)
 std::vector<std::string> read_input(const std::string& f)
 {
     auto ifs = std::ifstream(f,std::ifstream::in);
+    if (!ifs) {
+        std::cerr << "Unable to open file: " << f << "\n";
+        exit(-1);
+    }
     return read_input(ifs);
 }
