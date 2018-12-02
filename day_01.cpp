@@ -24,20 +24,7 @@
 // Part 2: Elapsed: 0.0179688
 // Jonathans-iMac:Advent-of-Code-2018 jonathan$
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <string>
-#include <iterator>
-#include <vector>
-#include <algorithm>
-#include <map>
-#include <set>
-#include <unordered_set>
-#include <queue>
-#include <chrono>
-#include "reader.hpp"
-
+#include "aoc.hpp"
 using namespace std;
 
 int main(int argc, char* argv[])

@@ -1,13 +1,7 @@
 // Advent of Code 2018
 // Day 01 - Chronal Calibration
 
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <set>
-#include <algorithm>
-#include "../reader.hpp"
-
+#include "../aoc.hpp"
 using namespace std;
 
 int main() 

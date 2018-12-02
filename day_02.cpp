@@ -1,17 +1,7 @@
 // Advent of Code 2018
-//
 // Day 02 - Inventory Management System
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <string>
-#include <iterator>
-#include <vector>
-#include <algorithm>
-#include <set>
-#include "reader.hpp"
-
+#include "aoc.hpp"
 using namespace std;
 
 int main(int argc, char* argv[])
