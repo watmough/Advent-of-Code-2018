@@ -25,3 +25,9 @@ std::vector<std::string> read_input(std::istream& ifs)
             std::back_inserter(lines));
     return lines;
 }
+
+std::vector<std::string> read_input(const std::string& f)
+{
+    auto ifs = std::ifstream(f,std::ifstream::in);
+    return read_input(ifs);
+}
