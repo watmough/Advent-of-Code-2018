@@ -4,8 +4,6 @@
 // Advent of Code 2018
 // utils.hpp 
 
-#include <iterator>
-
 // Count non-matching values over two ranges of iterators
 // See: https://en.cppreference.com/w/cpp/algorithm/count
 template<class InputIt>

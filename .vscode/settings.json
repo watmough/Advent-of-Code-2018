@@ -2,6 +2,8 @@
     "files.associations": {
         "chrono": "cpp",
         "set": "cpp",
-        "unordered_set": "cpp"
+        "unordered_set": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp"
     }
 }
