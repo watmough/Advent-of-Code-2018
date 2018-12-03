@@ -29,7 +29,7 @@ int main()
     // Part 2 - Change frequencies until 
     cycle_until(begin(vals),end(vals),[&](auto& v) {
         return seen_before((freq+=v));
-    })
+    });
 
     // // Part 2 - change frequencies until we see a duplicate frequency
     // //          freq needs to be reset so we catch first repeated freq
