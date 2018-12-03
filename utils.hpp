@@ -1,4 +1,8 @@
+#ifndef UTILS_HPP
+#define UTILS_HPP
 
+// Advent of Code 2018
+// utils.hpp 
 
 #include <iterator>
 
@@ -31,3 +35,4 @@ void for_all_pairs(FWIter first, FWIter last, Func f)
     }
 }
 
+#endif

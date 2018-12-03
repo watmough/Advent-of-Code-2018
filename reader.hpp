@@ -1,5 +1,9 @@
-// See:
-// https://stackoverflow.com/a/1567703/33758 
+#ifndef READER_HPP
+#define READER_HPP
+
+// Advent of Code 2018
+// Handy text file reader returning vector<string>
+// See: https://stackoverflow.com/a/1567703/33758 
 
 #include <iostream>
 #include <fstream>
@@ -35,3 +39,5 @@ std::vector<std::string> read_input(const std::string& f)
     }
     return read_input(ifs);
 }
+
+#endif
