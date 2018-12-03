@@ -9,6 +9,7 @@
 #include <iterator>
 #include <vector>
 #include <algorithm>
+#include <numeric>
 #include <set>
 #include <unordered_set>
 
