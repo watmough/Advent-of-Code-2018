@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
     vector<string> input = read_input("day_03.txt");
 
     // Part 1: Find the total area that overlaps between the claims
-    vector<tuple<int,int,int,int,int>> claims;
+    auto claims = vector<tuple<int,int,int,int,int>>();
     auto dots = array<int,1000*1000>();
     auto area_claimed = int{0};
     for (auto l : input) {
