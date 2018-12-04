@@ -9,6 +9,11 @@ int main(int argc, char* argv[])
     vector<string> input = read_input("template.txt");
 
     for (auto l : input) {
-        cout << l << "\n";
+
+        auto tokens = split(l,"|*%^");
+        cout << l << " -> ";
+        for (auto t : tokens)
+            cout << t << " ";
+        cout << "\n";
     }
 }
