@@ -4,6 +4,9 @@
 // Advent of Code 2018
 // utils.hpp 
 
+#include <algorithm>
+#include <functional>
+
 // Count non-matching values over two ranges of iterators
 // See: https://en.cppreference.com/w/cpp/algorithm/count
 template<class InputIt>
@@ -49,20 +52,18 @@ std::vector<std::string> split(const std::string& s, char delimiter)
 
 // Split a line into tokens, we may have multiple possible delimiters
 // Inspired by: https://www.fluentcpp.com/2017/04/21/how-to-split-a-string-in-c/
-std::vector<std::string> split(const std::string& s, const std::string& delimiters)
+template <typename FWIter, typename Func>
+std::vector<std::string> split(FWIter first, FWIter last, Func is_delim)
 {
-    auto pos = size_t{0};
-    auto lst = size_t{0};
+    auto pos = first;
+    auto lst = FWIter();
     auto tokens = std::vector<std::string>();
-    while (true)
+    while (pos!=last)
     {
-        pos = s.find_first_not_of(delimiters,lst); if (pos==std::string::npos) pos=s.length();
-        lst = s.find_first_of (delimiters,pos); if (lst==std::string::npos) lst=s.length();
-        if (pos==s.length()) 
-            break;
-        auto token = std::string(s,pos,lst-pos);
+        lst = std::find_if(pos,last,is_delim);
+        auto token = std::string(pos,lst);
         tokens.push_back(token);
-        pos = lst;
+        pos = std::find_if(lst,last,std::not1(is_delim));
     }
     return tokens;
 }
