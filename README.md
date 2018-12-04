@@ -1,5 +1,70 @@
 # Advent-of-Code-2018
 
+### Day 3 - [No Matter How You Slice It](https://adventofcode.com/2018/day/3)
+
+Rank: 2817/2449
+
+Compute the total multiply claimed area of fabric. Identify the single claim that overlaps no other claims.
+
+```C++
+// Advent of Code 2018
+// Day 03 - No Matter How You Slice It
+
+#include "aoc.hpp"
+using namespace std;
+
+int main(int argc, char* argv[])
+{
+    vector<string> input = read_input("day_03.txt");
+
+    // Part 1: Find the total area that overlaps between the claims
+    vector<tuple<int,int,int,int,int>> claims;
+    map<int,map<int,int>> dots;
+    auto area_claimed = int{0};
+    for (auto l : input) {
+        auto tokens = split(l," #@,:x");
+        claims.push_back(make_tuple(stoi(tokens[0]),stoi(tokens[1]),stoi(tokens[2]),
+                                                    stoi(tokens[1])+stoi(tokens[3])-1,stoi(tokens[2])+stoi(tokens[4])-1));
+        const auto& c = claims.back();
+        for (int i=get<1>(c);i<=get<3>(c);++i) {
+            for (int j=get<2>(c);j<=get<4>(c);++j) {
+                dots[i][j]++;
+                if (dots[i][j]==2)
+                    area_claimed++;
+            }
+        }
+    }
+    cout << "Part 1: Overlapping area: " << area_claimed << "\n";
+
+    // Part 2 - Find the one claim that does not overlap any others
+    for (auto c : claims) {
+        auto overlap = false;
+        for (int i=get<1>(c);i<=get<3>(c);++i) {
+            for (int j=get<2>(c);j<=get<4>(c);++j) {
+                if (dots[i][j]!=1)
+                    overlap=true;
+            }
+        }
+        if (!overlap) {
+            cout << "Part 2: Non-overlapping claim: " << get<0>(c) << "\n";
+        }
+    }
+}
+```
+
+### Performance
+
+```
+Jonathans-iMac:Advent-of-Code-2018 jonathan$ time ./day_03
+Part 1: Overlapping area: 113966
+Part 2: Non-overlapping claim: 235
+
+real    0m0.395s
+user    0m0.386s
+sys     0m0.008s
+Jonathans-iMac:Advent-of-Code-2018 jonathan$
+```
+
 ### Day 2 - [Inventory Management System](https://adventofcode.com/2018/day/2)
 
 Rank: 1086 / 1029
