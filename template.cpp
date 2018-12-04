@@ -10,7 +10,7 @@ struct is_delim : std::unary_function<const char&, bool> {
 
 int main(int argc, char* argv[])
 {
-    vector<string> input = read_input("template.txt");
+    auto input = read_input("template.txt");
 
     for (auto l : input) {
 

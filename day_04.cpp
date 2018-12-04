@@ -14,7 +14,7 @@ const static bool compare(const pair<int,int>& a, const pair<int,int>& b) {
 
 int main(int argc, char* argv[])
 {
-    vector<string> input = read_input("day_04.txt");
+    auto input = read_input("day_04.txt");
     sort(begin(input),end(input));
 
     // build a map of guards to total sleep time and by minute asleep
