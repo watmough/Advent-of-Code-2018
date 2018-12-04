@@ -1,5 +1,5 @@
 // Advent of Code 2018
-// Day 0x - 
+// Day 04 - 
 
 #include "aoc.hpp"
 using namespace std;
@@ -10,7 +10,7 @@ struct is_delim : std::unary_function<const char&, bool> {
 
 int main(int argc, char* argv[])
 {
-    vector<string> input = read_input("template.txt");
+    vector<string> input = read_input("day_04.txt");
 
     for (auto l : input) {
 
