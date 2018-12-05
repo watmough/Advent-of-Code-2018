@@ -17,8 +17,8 @@ string react(const string& s)
 int main(int argc, char* argv[])
 {
     // Part 1
-    auto text{read_input("day_05.txt").front()};
-    cout << "Part 1: Polymer length: " << react(text).length() << "\n";
+    auto text{react(read_input("day_05.txt").front())};
+    cout << "Part 1: Polymer length: " << text.length() << "\n";
 
     // Part 2 - Find shortest with 1 unit removed
     auto shortest{text.length()};
