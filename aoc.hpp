@@ -13,6 +13,7 @@
 #include <numeric>
 #include <set>
 #include <unordered_set>
+#include <cassert>
 
 // local input reader and misc utils
 #include "reader.hpp"
