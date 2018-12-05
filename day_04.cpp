@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
         if (l.find("wake")) {
             wakeat = stoi(tokens[5]);
             sleeping[guard]+=wakeat-sleepat;
-            for (int i=sleepat;i<wakeat;++i) minutes[guard][i]++;
+            for (auto i=sleepat;i<wakeat;++i) minutes[guard][i]++;
         }
     }
 
