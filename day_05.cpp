@@ -16,14 +16,12 @@ string react(const string& s)
 
 int main(int argc, char* argv[])
 {
-    auto text = read_input("day_05.txt").front();
-
     // Part 1
-    auto textp = react(text);
-    cout << "Part 1: Polymer length: " << textp.length() << "\n";
+    auto text{read_input("day_05.txt").front()};
+    cout << "Part 1: Polymer length: " << react(text).length() << "\n";
 
     // Part 2 - Find shortest with 1 unit removed
-    auto shortest = text.length();
+    auto shortest{text.length()};
     for (auto u{'a'};u<='z';++u) {
         auto textpp{text};
         textpp.erase(std::remove(textpp.begin(), textpp.end(), u), textpp.end());
