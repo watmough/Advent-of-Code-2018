@@ -1,5 +1,5 @@
 // Advent of Code 2018
-// Day 0x - 
+// Day 07 - 
 
 #include <stdio.h>
 #include <stdlib.h>

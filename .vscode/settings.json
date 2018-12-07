@@ -8,6 +8,7 @@
         "string": "cpp",
         "memory_resource": "cpp",
         "iosfwd": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "string.h": "c"
     }
 }
