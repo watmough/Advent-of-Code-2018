@@ -3,52 +3,8 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
-        // {
-        //     "label": "build c++",
-        //     "type": "shell",
-        //     "command": "clang",
-        //     "group": {
-        //         "kind": "build",
-        //         "isDefault": true
-        //     },
-        //     "args": [
-        //         "-Wall",
-        //         "-o",
-        //         "${fileDirname}/${fileBasenameNoExtension}",
-        //         "${fileDirname}/${fileBasename}",
-        //         "-g",
-        //         //"--analyze",
-        //         "-O3",
-        //         "-std=c++14",
-        //         "-stdlib=libc++",
-        //         "-lc++",
-        //         "-v"
-        //     ],
-        //     "presentation": {
-        //         "echo": true,
-        //         "reveal": "always",
-        //         "focus": true,
-        //         "panel": "shared",
-        //         "showReuseMessage": true
-        //     },
-        //     "problemMatcher": {
-        //         "owner": "cpp",
-        //         "fileLocation": [
-        //             "relative",
-        //             "${workspaceRoot}"
-        //         ],
-        //         "pattern": {
-        //             "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-        //             "file": 1,
-        //             "line": 2,
-        //             "column": 3,
-        //             "severity": 4,
-        //             "message": 5
-        //         }
-        //     }
-        // },
         {
-            "label": "build c",
+            "label": "build c++",
             "type": "shell",
             "command": "clang",
             "group": {
@@ -61,9 +17,9 @@
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "${fileDirname}/${fileBasename}",
                 "-g",
-//                "--analyze",
+                //"--analyze",
                 "-O0",
-                "-std=c99",
+                "-std=c++14",
                 "-stdlib=libc++",
                 "-lc++",
                 "-v"
@@ -76,7 +32,7 @@
                 "showReuseMessage": true
             },
             "problemMatcher": {
-                "owner": "c",
+                "owner": "cpp",
                 "fileLocation": [
                     "relative",
                     "${workspaceRoot}"
@@ -90,7 +46,51 @@
                     "message": 5
                 }
             }
-        }
+        },
+//         {
+//             "label": "build c",
+//             "type": "shell",
+//             "command": "clang",
+//             "group": {
+//                 "kind": "build",
+//                 "isDefault": true
+//             },
+//             "args": [
+//                 "-Wall",
+//                 "-o",
+//                 "${fileDirname}/${fileBasenameNoExtension}",
+//                 "${fileDirname}/${fileBasename}",
+//                 "-g",
+// //                "--analyze",
+//                 "-O0",
+//                 "-std=c99",
+//                 "-stdlib=libc++",
+//                 "-lc++",
+//                 "-v"
+//             ],
+//             "presentation": {
+//                 "echo": true,
+//                 "reveal": "always",
+//                 "focus": true,
+//                 "panel": "shared",
+//                 "showReuseMessage": true
+//             },
+//             "problemMatcher": {
+//                 "owner": "c",
+//                 "fileLocation": [
+//                     "relative",
+//                     "${workspaceRoot}"
+//                 ],
+//                 "pattern": {
+//                     "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+//                     "file": 1,
+//                     "line": 2,
+//                     "column": 3,
+//                     "severity": 4,
+//                     "message": 5
+//                 }
+//             }
+//         }
     ]
 
 }
