@@ -1,5 +1,5 @@
 // Advent of Code 2018
-// Day 0x - 
+// Day 08 - Memory Maneuver
 
 #include "aoc.hpp"
 using namespace std;
