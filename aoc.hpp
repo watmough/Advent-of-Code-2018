@@ -6,6 +6,9 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <forward_list>
+#include <list>
+#include <deque>
 #include <array>
 #include <vector>
 #include <map>

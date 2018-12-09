@@ -1,5 +1,5 @@
 // Advent of Code 2018
-// Day 06 - 
+// Day 06 - Chronal Coordinates
 
 #include <stdio.h>
 #include <stdlib.h>
