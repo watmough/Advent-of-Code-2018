@@ -1,5 +1,116 @@
 # Advent-of-Code-2018
 
+### Day 09 - [Marble Mania](https://adventofcode.com/2018/day/9)
+
+Rank: 5973 / 5795
+
+```C++
+// Advent of Code 2018
+// Day 09 - Marble Mania
+
+#include "aoc.hpp"
+using namespace std;
+
+template <typename Iter>
+void print_board(int player, const Iter& first, const Iter& last, const Iter& pos) {
+    cout << "[" << player << "] ";
+    for (auto it=first;it!=last;++it)
+        if (it==pos) cout << "(" << *it << ")";
+        else         cout << " " << *it << " ";
+    cout << "\n";
+}
+
+template <typename Tscore>
+pair<int,Tscore> whatarethescoresgeorgedawes(map<int,Tscore> scores) {
+    auto chickendinner{Tscore{}};
+    auto winner{0};
+    for (auto s : scores) {
+        if (s.second>chickendinner) { chickendinner=s.second, winner=s.first; };
+    }
+    cout << "Winner: " << winner << " with " << chickendinner << "\n";
+    return make_pair(winner,chickendinner);
+}
+
+template <typename Tscore>
+pair<int,Tscore> play_game(int players, int marbles, std::string part="") {
+    auto b{list<int>{0}};
+    auto score{map<int,Tscore>{}};
+    auto player{0};
+    auto pos{b.begin()};
+    for (auto marble=1;marble<=marbles;++marble, player=(player+1)%players) {
+        if (marble%23!=0) {
+            for (auto i{0};i<2;++i) { if (pos==end(b)) pos=begin(b); pos++; }
+            pos=b.insert(pos,marble);
+        } else {
+            for (auto i{0};i<7;++i) { if (pos==begin(b)) pos=end(b); pos--; }
+            score[player]+=marble+*pos;
+            pos=b.erase(pos);
+        }
+        if (marbles<100)
+            print_board(player+1,begin(b),end(b),pos);
+    }
+    cout << part;
+    return whatarethescoresgeorgedawes(score);
+}
+
+// Puzzle input: 405 players; last marble is worth 71700 points
+int main(int argc, char **argv)
+{
+    play_game<int>(9,25);
+    play_game<int>(10,1618);
+    play_game<int>(13,7999);
+    play_game<int>(17,1104);
+    play_game<int>(21,6111);
+    play_game<int>(30,5807);
+    play_game<uint64_t>(405,71700,string("Part 1: "));
+    play_game<uint64_t>(405,71700*100,"Part 2: ");
+}
+```
+
+### Performance
+
+```
+Jonathans-iMac:Advent-of-Code-2018 jonathan$ time ./day_09
+[1]  0 (1)
+[2]  0 (2) 1
+[3]  0  2  1 (3)
+[4]  0 (4) 2  1  3
+[5]  0  4  2 (5) 1  3
+[6]  0  4  2  5  1 (6) 3
+[7]  0  4  2  5  1  6  3 (7)
+[8]  0 (8) 4  2  5  1  6  3  7
+[9]  0  8  4 (9) 2  5  1  6  3  7
+[1]  0  8  4  9  2 (10) 5  1  6  3  7
+[2]  0  8  4  9  2  10  5 (11) 1  6  3  7
+[3]  0  8  4  9  2  10  5  11  1 (12) 6  3  7
+[4]  0  8  4  9  2  10  5  11  1  12  6 (13) 3  7
+[5]  0  8  4  9  2  10  5  11  1  12  6  13  3 (14) 7
+[6]  0  8  4  9  2  10  5  11  1  12  6  13  3  14  7 (15)
+[7]  0 (16) 8  4  9  2  10  5  11  1  12  6  13  3  14  7  15
+[8]  0  16  8 (17) 4  9  2  10  5  11  1  12  6  13  3  14  7  15
+[9]  0  16  8  17  4 (18) 9  2  10  5  11  1  12  6  13  3  14  7  15
+[1]  0  16  8  17  4  18  9 (19) 2  10  5  11  1  12  6  13  3  14  7  15
+[2]  0  16  8  17  4  18  9  19  2 (20) 10  5  11  1  12  6  13  3  14  7  15
+[3]  0  16  8  17  4  18  9  19  2  20  10 (21) 5  11  1  12  6  13  3  14  7  15
+[4]  0  16  8  17  4  18  9  19  2  20  10  21  5 (22) 11  1  12  6  13  3  14  7  15
+[5]  0  16  8  17  4  18 (19) 2  20  10  21  5  22  11  1  12  6  13  3  14  7  15
+[6]  0  16  8  17  4  18  19  2 (24) 20  10  21  5  22  11  1  12  6  13  3  14  7  15
+[7]  0  16  8  17  4  18  19  2  24  20 (25) 10  21  5  22  11  1  12  6  13  3  14  7  15
+Winner: 4 with 32
+Winner: 9 with 8317
+Winner: 11 with 146373
+Winner: 15 with 2764
+Winner: 4 with 54718
+Winner: 19 with 37305
+Part 1: Winner: 111 with 428690
+Part 2: Winner: 272 with 3628143500
+
+real    0m0.897s
+user    0m0.811s
+sys     0m0.078s
+Jonathans-iMac:Advent-of-Code-2018 jonathan$
+```
+
 ### Day 8 - [Memory Maneuver](https://adventofcode.com/2018/day/8)
 
 Rank: 4671 / 4470
