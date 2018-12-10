@@ -18,7 +18,7 @@
                 "${fileDirname}/${fileBasename}",
                 "-g",
                 //"--analyze",
-                "-O3",
+                "-O0",
                 "-std=c++14",
                 "-stdlib=libc++",
                 "-lc++",
