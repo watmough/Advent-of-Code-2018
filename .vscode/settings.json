@@ -9,6 +9,9 @@
         "memory_resource": "cpp",
         "iosfwd": "cpp",
         "utility": "cpp",
-        "string.h": "c"
+        "string.h": "c",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp"
     }
 }
